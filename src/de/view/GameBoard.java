@@ -46,6 +46,7 @@ public class GameBoard extends JPanel implements KeyListener, ActionListener {
     public GameBoard(JFrame frame) {
         this.frame = frame;
 
+        System.out.println(level);
 
 
     }
