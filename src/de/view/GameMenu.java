@@ -15,6 +15,7 @@ public class  GameMenu extends JPanel implements ActionListener {
 
     private static final long serialVersionUID = 1L;
     private JFrame frame;
+    private JButton newGameButton, exitGameButton;
 
     /**
      * Konstruktor der Klasse GameMenu
@@ -23,18 +24,32 @@ public class  GameMenu extends JPanel implements ActionListener {
      */
     public GameMenu(JFrame frame) {
         this.frame = frame;
+        JPanel panel = new JPanel();
 
         /**
          * Beginn Ihres Quellcodes Hier koennen Sie Ihre Buttons anlegen und ein Layout
          * festlegen
          */
 
+        newGameButton = new JButton("Neues Spiel");
+        exitGameButton = new JButton("Spiel Beenden");
+
+        newGameButton.addActionListener(this);
+        exitGameButton.addActionListener(this);
 
         
         /**
          * Ende Ihres Quellcodes
          */
         // Fuegt das JPanel (diese Klasse) dem JFrame hinzu und zeigt es an!
+
+        setLayout(null);
+        newGameButton.setBounds(225, 100, 150, 25);
+        exitGameButton.setBounds(225, 200, 150, 25);
+        add(newGameButton);
+        add(exitGameButton);
+        this.frame.getContentPane().add(panel);
+        this.frame.pack();
         this.frame.add(this);
     }
 
@@ -56,17 +71,21 @@ public class  GameMenu extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         // Ihr Quellcode zur Behandlung der Events der beiden Buttons
 
-
         
         /**
          * Der Quellcode zum laden des GameBoards Er darf erst ausgeführt werden, wenn
          * der Nutzer auf "Neues Spiel" geklickt hat
          */
-        frame.remove(this); // Entfernen des GameMenu JPanels
-        GameBoard gameBoard = new GameBoard(frame); // Erzeugen eines GameBoard Objektes
-        frame.add(gameBoard); // Hinzufuegen des GameBoards
-        gameBoard.requestFocus(); // Setzen des Fokus auf unser Fenster
-        frame.validate();
+        if(e.getSource() == newGameButton){
+            frame.remove(this); // Entfernen des GameMenu JPanels
+            GameBoard gameBoard = new GameBoard(frame); // Erzeugen eines GameBoard Objektes
+            frame.add(gameBoard); // Hinzufuegen des GameBoards
+            gameBoard.requestFocus(); // Setzen des Fokus auf unser Fenster
+            frame.validate();
+        } else if(e.getSource() == exitGameButton){
+            System.exit(0);
+        }
+
     }
 
 }
