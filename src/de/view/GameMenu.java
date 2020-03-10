@@ -1,4 +1,4 @@
-package de.hems.view;
+package de.view;
 
 import java.awt.Graphics;
 import javax.swing.JPanel;

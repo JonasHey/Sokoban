@@ -1,4 +1,4 @@
-package de.hems.view;
+package de.view;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
