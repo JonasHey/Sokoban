@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import de.hems.model.*;
+import de.model.*;
 
 /**
  * Stellt das Spielfeld her und besitzt die Logik des gesamten Spiels Die Klasse
