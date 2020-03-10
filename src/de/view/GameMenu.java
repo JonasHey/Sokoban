@@ -11,7 +11,7 @@ import javax.swing.JButton;
  * die Klasse GameMenu die Eigenschaften und Funktionalitaeten eines JPanels
  * besitzt.
  */
-public class GameMenu extends JPanel implements ActionListener {
+public class  GameMenu extends JPanel implements ActionListener {
 
     private static final long serialVersionUID = 1L;
     private JFrame frame;
